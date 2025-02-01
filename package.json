@@ -1,5 +1,5 @@
 {
-  "name": "serverstarter",
+  "name": "fp-detectorai",
   "version": "1.0.0",
   "description": "Browser Extension Backend for Real-Time News Authenticity Analysis",
   "main": "dist/server.ts",
@@ -17,8 +17,11 @@
     "url": "git+https://github.com/Graff1406/nodejs-server-fp-detectop-ai.git"
   },
   "keywords": [
-    "serverstarter",
-    "nodejs"
+    "Detector",
+    "Fake",
+    "Propoganda",
+    "Manipilation",
+    "AI"
   ],
   "author": "Avtandil",
   "license": "ISC",
