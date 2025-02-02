@@ -1,5 +1,6 @@
 import createApp from './app';
 import { config } from './config/app.config';
+import { pingServer } from './utils/ping-server.utils';
 
 const startServer = () => {
   const app = createApp();
@@ -7,6 +8,10 @@ const startServer = () => {
   app.listen(config.PORT, () => {
     console.log(`Server is running on http://localhost:${config.PORT}`);
     console.log(`Environment: ${config.NODE_ENV}`);
+
+    if (config.NODE_ENV === 'production') {
+      pingServer(config.HOST_NAME);
+    }
   });
 };
 
