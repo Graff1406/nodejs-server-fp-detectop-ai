@@ -3,7 +3,6 @@ import { Readability } from '@mozilla/readability';
 
 // Interface defining the extracted article structure
 interface Article {
-  title: string;
   content: string;
   noContent?: boolean;
   error?: boolean;
@@ -36,17 +35,15 @@ export async function extractText(url: string): Promise<Article> {
     const article = reader.parse();
 
     if (!article) {
-      return { title: '', content: '', noContent: true };
+      return { content: '', noContent: true };
     }
 
     return {
-      title: article.title ?? '',
       content: article.textContent.trim() ?? '',
     };
   } catch (error) {
     console.error('Error extracting text:', error);
     return {
-      title: '',
       content: '',
       error: true,
       errorMessage: error instanceof Error ? error.message : 'Unknown error',

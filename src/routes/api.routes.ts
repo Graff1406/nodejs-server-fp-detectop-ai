@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { extractText } from '../services/extractText.service';
+import { generateText } from '../services/generateText.services';
 
 const router = Router();
 
@@ -21,12 +22,14 @@ router.get('/analyze', async (req, res): Promise<void> => {
       });
       return;
     } else {
-      console.log('🚀 ~ router.get ~ article:', article);
+      const prompt = article.content;
+      const result = await generateText(prompt);
+      console.log('🚀 ~ router.get ~ result:', result);
       res.json({
         message: 'Data received',
         analyzedUrl: url,
         detectedLanguage: lang,
-        result: { article },
+        result,
       });
     }
   }
