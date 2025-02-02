@@ -24,6 +24,7 @@ export const analysisSchema = {
         'method',
         'fake_type',
         'quote_assessment',
+        'purpose_disinformation',
       ],
       properties: {
         manipulation: {
@@ -38,6 +39,9 @@ export const analysisSchema = {
         method: { type: SchemaType.STRING },
         fake_type: { type: SchemaType.STRING },
         quote_assessment: {
+          type: SchemaType.STRING,
+        },
+        purpose_disinformation: {
           type: SchemaType.STRING,
         },
       },
@@ -57,7 +61,7 @@ export const analysisSchema = {
       type: SchemaType.OBJECT,
       required: ['manipulation', 'fake', 'propaganda'],
       description:
-        'The rules is important. The confidence property of each item must be a number between 1 and 100. Absolutely all data returned as a response that is a string must begin with a capital letter. The tone and type properties may contain multiple values separated by commas. The string values ​​in each field must be in the language in which the text for analysis is written. All possible options need to be identified',
+        'The rules are important, the string values in each field must be in the language in which the text for analysis is written, the confidence property of each item must be a number between 1 and 100, absolutely all data returned as a response that is a string must begin with a capital letter, and the tone and type properties may contain multiple values separated by commas, all possible options need to be identified',
       properties: {
         manipulation: {
           type: SchemaType.ARRAY,
@@ -69,6 +73,7 @@ export const analysisSchema = {
               'confidence',
               'method',
               'tone',
+              'purpose_disinformation',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -76,7 +81,9 @@ export const analysisSchema = {
               method: { type: SchemaType.STRING },
               tone: { type: SchemaType.STRING },
               quote_assessment: {
-                nullable: true,
+                type: SchemaType.STRING,
+              },
+              purpose_disinformation: {
                 type: SchemaType.STRING,
               },
             },
@@ -92,6 +99,7 @@ export const analysisSchema = {
               'confidence',
               'fake_type',
               'tone',
+              'purpose_disinformation',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -99,6 +107,9 @@ export const analysisSchema = {
               fake_type: { type: SchemaType.STRING },
               tone: { type: SchemaType.STRING },
               quote_assessment: {
+                type: SchemaType.STRING,
+              },
+              purpose_disinformation: {
                 type: SchemaType.STRING,
               },
             },
@@ -114,6 +125,7 @@ export const analysisSchema = {
               'confidence',
               'type',
               'tone',
+              'purpose_disinformation',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -121,6 +133,9 @@ export const analysisSchema = {
               type: { type: SchemaType.STRING },
               tone: { type: SchemaType.STRING },
               quote_assessment: {
+                type: SchemaType.STRING,
+              },
+              purpose_disinformation: {
                 type: SchemaType.STRING,
               },
             },
