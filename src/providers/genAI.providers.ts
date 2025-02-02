@@ -26,7 +26,7 @@ export type Model =
   | ModelType.Gemini1_5_Pro_002
   | ModelType.TextEmbedding_004
   | ModelType.GeminiExp_1121
-  | ModelType.LearnLM_1_5_Pro_Experimental;
+  | ModelType.Gemini_2_0_flash_exp;
 
 export enum ModelType {
   Gemini1_5_Flash = 'gemini-1.5-flash',
@@ -36,5 +36,5 @@ export enum ModelType {
   Gemini1_5_Pro = 'gemini-1.5-pro',
   TextEmbedding_004 = 'text-embedding-004',
   GeminiExp_1121 = 'gemini-exp-1121',
-  LearnLM_1_5_Pro_Experimental = 'learnlm-1.5-pro-experimental',
+  Gemini_2_0_flash_exp = 'gemini-2.0-flash-exp',
 }

@@ -6,11 +6,13 @@ export const analysisSchema = {
   properties: {
     is_news_article: {
       type: SchemaType.BOOLEAN,
+      description:
+        'Determine if the following article is a news article or not. Return `true` if it is a news article, and `false` if it is not.',
     },
     translations: {
       type: SchemaType.OBJECT,
       description:
-        'Translate the keys of the current object into the language of the article',
+        'Each property name must be returned in the language of the article and must begin with a capital letter',
       required: [
         'manipulation',
         'fake',
@@ -21,6 +23,7 @@ export const analysisSchema = {
         'tone',
         'method',
         'fake_type',
+        'quote_assessment',
       ],
       properties: {
         manipulation: {
@@ -34,6 +37,9 @@ export const analysisSchema = {
         tone: { type: SchemaType.STRING },
         method: { type: SchemaType.STRING },
         fake_type: { type: SchemaType.STRING },
+        quote_assessment: {
+          type: SchemaType.STRING,
+        },
       },
     },
     total_score: {
@@ -51,18 +57,28 @@ export const analysisSchema = {
       type: SchemaType.OBJECT,
       required: ['manipulation', 'fake', 'propaganda'],
       description:
-        'The confidence property of each item must be a number between 1 and 100',
+        'The rules is important. The confidence property of each item must be a number between 1 and 100. Absolutely all data returned as a response that is a string must begin with a capital letter. The tone and type properties may contain multiple values separated by commas. The string values ​​in each field must be in the language in which the text for analysis is written. All possible options need to be identified',
       properties: {
         manipulation: {
           type: SchemaType.ARRAY,
           items: {
             type: SchemaType.OBJECT,
-            required: ['quote', 'confidence', 'method', 'tone'],
+            required: [
+              'quote',
+              'quote_assessment',
+              'confidence',
+              'method',
+              'tone',
+            ],
             properties: {
               quote: { type: SchemaType.STRING },
               confidence: { type: SchemaType.NUMBER },
               method: { type: SchemaType.STRING },
               tone: { type: SchemaType.STRING },
+              quote_assessment: {
+                nullable: true,
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -70,12 +86,21 @@ export const analysisSchema = {
           type: SchemaType.ARRAY,
           items: {
             type: SchemaType.OBJECT,
-            required: ['quote', 'confidence', 'fake_type', 'tone'],
+            required: [
+              'quote',
+              'quote_assessment',
+              'confidence',
+              'fake_type',
+              'tone',
+            ],
             properties: {
               quote: { type: SchemaType.STRING },
               confidence: { type: SchemaType.NUMBER },
               fake_type: { type: SchemaType.STRING },
               tone: { type: SchemaType.STRING },
+              quote_assessment: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -83,12 +108,21 @@ export const analysisSchema = {
           type: SchemaType.ARRAY,
           items: {
             type: SchemaType.OBJECT,
-            required: ['quote', 'confidence', 'type', 'tone'],
+            required: [
+              'quote',
+              'quote_assessment',
+              'confidence',
+              'type',
+              'tone',
+            ],
             properties: {
               quote: { type: SchemaType.STRING },
               confidence: { type: SchemaType.NUMBER },
               type: { type: SchemaType.STRING },
               tone: { type: SchemaType.STRING },
+              quote_assessment: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
