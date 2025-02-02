@@ -1,9 +1,8 @@
 import express from 'express';
-import cors from 'cors';
 import { config } from './config/app.config';
-import { corsOptions } from './config/cors.config';
 import { securityMiddleware } from './middlewares/security.middleware';
 import { loggerMiddleware } from './middlewares/logger.middleware';
+import { corsMiddleware } from './middlewares/cors.middleware';
 import { notFoundHandler, errorHandler } from './middlewares/error.middleware';
 import { router as apiRouter } from './routes/api.routes';
 
@@ -16,7 +15,7 @@ const createApp = () => {
 
   // Security
   app.use(...securityMiddleware);
-  app.use(cors(corsOptions));
+  app.use(corsMiddleware);
 
   // Logging
   if (loggerMiddleware) {

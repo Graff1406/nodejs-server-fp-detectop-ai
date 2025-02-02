@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { extractText } from '../services/extractText.service';
+import { analysisSchema } from '../models';
 import { generateText } from '../services/generateText.services';
 
 const router = Router();
@@ -23,7 +24,13 @@ router.get('/analyze', async (req, res): Promise<void> => {
       return;
     } else {
       const prompt = article.content;
-      const result = await generateText(prompt);
+      const result = await generateText({
+        prompt,
+        generationConfig: {
+          responseMimeType: 'application/json',
+          responseSchema: analysisSchema,
+        },
+      });
       console.log('🚀 ~ router.get ~ result:', result);
       res.json({
         message: 'Data received',

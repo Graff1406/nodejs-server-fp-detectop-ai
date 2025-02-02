@@ -1,26 +1,39 @@
-import { getGemAIModel } from '../providers/genAI.providers';
+import {
+  genAI,
+  ModelType,
+  GenerateOptions,
+} from '../providers/genAI.providers';
+import { Result } from '../models';
 
-const model = getGemAIModel();
+export const generateText = async <T>({
+  prompt = '',
+  modelType = ModelType.Gemini1_5_Flash,
+  generationConfig,
+}: GenerateOptions): Promise<Result<T>> => {
+  const model = genAI.getGenerativeModel({
+    model: modelType,
+    generationConfig,
+  });
 
-export const generateText = async (prompt: string): Promise<Result> => {
   try {
     const result = await model.generateContent(prompt);
+    const responseText = result.response.text();
+
+    const parsedData =
+      generationConfig?.responseMimeType === 'application/json'
+        ? (JSON.parse(responseText) as T)
+        : (responseText as T);
+
     return {
-      text: result.response.text(),
+      data: parsedData,
       status: 200,
     };
   } catch (error) {
-    console.log(error);
+    console.error('Error in generateText:', error);
+
     return {
-      text: 'Something went wrong',
+      data: error as T,
       status: 500,
     };
   }
-};
-
-// Types
-
-type Result = {
-  text: string;
-  status: number;
 };
