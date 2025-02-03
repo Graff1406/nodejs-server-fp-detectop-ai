@@ -25,6 +25,7 @@ export const analysisSchema = {
         'fake_type',
         'quote_assessment',
         'purpose_disinformation',
+        'summary',
       ],
       properties: {
         manipulation: {
