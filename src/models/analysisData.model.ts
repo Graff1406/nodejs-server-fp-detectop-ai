@@ -59,10 +59,13 @@ export const analysisSchema = {
     },
     details: {
       type: SchemaType.OBJECT,
-      required: ['manipulation', 'fake', 'propaganda'],
+      required: ['manipulation', 'fake', 'propaganda', 'article_summary'],
       description:
         'The rules are important, the string values in each field must be in the language in which the text for analysis is written, the confidence property of each item must be a number between 1 and 100, absolutely all data returned as a response that is a string must begin with a capital letter, and the tone and type properties may contain multiple values separated by commas, all possible options need to be identified',
       properties: {
+        article_summary: {
+          type: SchemaType.STRING,
+        },
         manipulation: {
           type: SchemaType.ARRAY,
           items: {
