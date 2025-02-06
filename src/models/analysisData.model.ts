@@ -7,7 +7,7 @@ export const analysisSchema = {
     is_news_article: {
       type: SchemaType.BOOLEAN,
       description:
-        'Determine if the following article is a news article or not. Return `true` if it is a news article, and `false` if it is not.',
+        'Determine if the following article is a legitimate news article from a reputable news source. Analyze the structure, language, and references to verify its credibility. Return true only if it is a genuine news article, and false otherwise.',
     },
     translations: {
       type: SchemaType.OBJECT,
@@ -26,6 +26,7 @@ export const analysisSchema = {
         'quote_assessment',
         'purpose_disinformation',
         'summary',
+        'intended_beneficiary',
       ],
       properties: {
         manipulation: {
@@ -46,6 +47,9 @@ export const analysisSchema = {
           type: SchemaType.STRING,
         },
         summary: {
+          type: SchemaType.STRING,
+        },
+        intended_beneficiary: {
           type: SchemaType.STRING,
         },
       },
@@ -69,6 +73,8 @@ export const analysisSchema = {
       properties: {
         brief_summary_article: {
           type: SchemaType.STRING,
+          description:
+            'Provide a concise summary of the article. Focus on the most essential points, capturing the core message or significance in a few sentences or even one sentence. Ensure that the summary reflects the main idea clearly and succinctly.',
         },
         manipulation: {
           type: SchemaType.ARRAY,
@@ -81,6 +87,7 @@ export const analysisSchema = {
               'method',
               'tone',
               'purpose_disinformation',
+              'intended_beneficiary',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -91,6 +98,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               purpose_disinformation: {
+                type: SchemaType.STRING,
+              },
+              intended_beneficiary: {
                 type: SchemaType.STRING,
               },
             },
@@ -107,6 +117,7 @@ export const analysisSchema = {
               'fake_type',
               'tone',
               'purpose_disinformation',
+              'intended_beneficiary',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -117,6 +128,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               purpose_disinformation: {
+                type: SchemaType.STRING,
+              },
+              intended_beneficiary: {
                 type: SchemaType.STRING,
               },
             },
@@ -133,6 +147,7 @@ export const analysisSchema = {
               'type',
               'tone',
               'purpose_disinformation',
+              'intended_beneficiary',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -143,6 +158,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               purpose_disinformation: {
+                type: SchemaType.STRING,
+              },
+              intended_beneficiary: {
                 type: SchemaType.STRING,
               },
             },
