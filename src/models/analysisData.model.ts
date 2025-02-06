@@ -27,6 +27,7 @@ export const analysisSchema = {
         'purpose_disinformation',
         'summary',
         'intended_beneficiary',
+        'audience',
       ],
       properties: {
         manipulation: {
@@ -50,6 +51,9 @@ export const analysisSchema = {
           type: SchemaType.STRING,
         },
         intended_beneficiary: {
+          type: SchemaType.STRING,
+        },
+        audience: {
           type: SchemaType.STRING,
         },
       },
@@ -88,6 +92,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
+              'audience',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -101,6 +106,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               intended_beneficiary: {
+                type: SchemaType.STRING,
+              },
+              audience: {
                 type: SchemaType.STRING,
               },
             },
@@ -118,6 +126,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
+              'audience',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -131,6 +140,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               intended_beneficiary: {
+                type: SchemaType.STRING,
+              },
+              audience: {
                 type: SchemaType.STRING,
               },
             },
@@ -148,6 +160,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
+              'audience',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -161,6 +174,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               intended_beneficiary: {
+                type: SchemaType.STRING,
+              },
+              audience: {
                 type: SchemaType.STRING,
               },
             },

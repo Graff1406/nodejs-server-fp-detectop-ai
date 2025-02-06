@@ -1,4 +1,5 @@
 import { Router } from 'express';
+
 import { extractText } from '../services/extractText.service';
 import { analysisSchema } from '../models';
 import { generateText } from '../services/generateText.services';
@@ -6,7 +7,7 @@ import { generateText } from '../services/generateText.services';
 const router = Router();
 
 router.get('/analyze', async (req, res): Promise<void> => {
-  const { url, lang } = req.query as { url?: string; lang?: string };
+  const { url } = req.query as { url?: string };
 
   if (url) {
     const article = await extractText(url);
@@ -25,17 +26,15 @@ router.get('/analyze', async (req, res): Promise<void> => {
     } else {
       const prompt = article.content;
       const result = await generateText({
-        prompt,
+        prompt: `Language of article: ${prompt.substring(0, 100)}\n\nArticle${prompt}`,
         generationConfig: {
           responseMimeType: 'application/json',
           responseSchema: analysisSchema,
         },
       });
-      console.log('🚀 ~ router.get ~ result:', result);
       res.json({
         message: 'Data received',
         analyzedUrl: url,
-        detectedLanguage: lang,
         result,
       });
     }
