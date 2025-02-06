@@ -26,7 +26,11 @@ router.get('/analyze', async (req, res): Promise<void> => {
     } else {
       const prompt = article.content;
       const result = await generateText({
-        prompt: `Language of article: ${prompt.substring(0, 100)}\n\nArticle${prompt}`,
+        prompt: `
+          Language of article: ${prompt.substring(0, 100)}.
+          Article${prompt}.
+          Source: ${url}
+        `,
         generationConfig: {
           responseMimeType: 'application/json',
           responseSchema: analysisSchema,

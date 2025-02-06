@@ -28,6 +28,7 @@ export const analysisSchema = {
         'summary',
         'intended_beneficiary',
         'audience',
+        'source_credibility_assessment',
       ],
       properties: {
         manipulation: {
@@ -56,6 +57,9 @@ export const analysisSchema = {
         audience: {
           type: SchemaType.STRING,
         },
+        source_credibility_assessment: {
+          type: SchemaType.STRING,
+        },
       },
     },
     total_score: {
@@ -71,7 +75,13 @@ export const analysisSchema = {
     },
     details: {
       type: SchemaType.OBJECT,
-      required: ['manipulation', 'fake', 'propaganda', 'brief_summary_article'],
+      required: [
+        'manipulation',
+        'fake',
+        'propaganda',
+        'brief_summary_article',
+        'source_credibility_assessment',
+      ],
       description:
         'The rules are important, the string values in each field must be in the language in which the text for analysis is written, the confidence property of each item must be a number between 1 and 100, absolutely all data returned as a response that is a string must begin with a capital letter, and the tone and type properties may contain multiple values separated by commas, all possible options need to be identified',
       properties: {
@@ -79,6 +89,9 @@ export const analysisSchema = {
           type: SchemaType.STRING,
           description:
             'Provide a concise summary of the article. Focus on the most essential points, capturing the core message or significance in a few sentences or even one sentence. Ensure that the summary reflects the main idea clearly and succinctly.',
+        },
+        source_credibility_assessment: {
+          type: SchemaType.STRING,
         },
         manipulation: {
           type: SchemaType.ARRAY,
