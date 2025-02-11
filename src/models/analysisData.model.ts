@@ -14,6 +14,7 @@ export const analysisSchema = {
       description:
         'Each property name must be returned in the language of the article and must begin with a capital letter',
       required: [
+        'disinformation',
         'manipulation',
         'fake',
         'propaganda',
@@ -31,6 +32,9 @@ export const analysisSchema = {
         'source_credibility_assessment',
       ],
       properties: {
+        disinformation: {
+          type: SchemaType.STRING,
+        },
         manipulation: {
           type: SchemaType.STRING,
         },
@@ -68,6 +72,7 @@ export const analysisSchema = {
       description:
         'The total score of the article must be a number between 1 and 100',
       properties: {
+        disinformation: { type: SchemaType.NUMBER },
         propaganda: { type: SchemaType.NUMBER },
         fake: { type: SchemaType.NUMBER },
         manipulation: { type: SchemaType.NUMBER },
@@ -76,6 +81,7 @@ export const analysisSchema = {
     details: {
       type: SchemaType.OBJECT,
       required: [
+        'disinformation',
         'manipulation',
         'fake',
         'propaganda',
@@ -92,8 +98,44 @@ export const analysisSchema = {
         },
         source_credibility_assessment: {
           type: SchemaType.STRING,
+          description:
+            '"Analyze the credibility of the given news source. Consider all mentions of bias, corruption, bribery, or publishing unverified information. Provide a concise assessment based on available data."',
         },
         manipulation: {
+          type: SchemaType.ARRAY,
+          items: {
+            type: SchemaType.OBJECT,
+            required: [
+              'quote',
+              'quote_assessment',
+              'confidence',
+              'method',
+              'tone',
+              'purpose_disinformation',
+              'intended_beneficiary',
+              'audience',
+            ],
+            properties: {
+              quote: { type: SchemaType.STRING },
+              confidence: { type: SchemaType.NUMBER },
+              method: { type: SchemaType.STRING },
+              tone: { type: SchemaType.STRING },
+              quote_assessment: {
+                type: SchemaType.STRING,
+              },
+              purpose_disinformation: {
+                type: SchemaType.STRING,
+              },
+              intended_beneficiary: {
+                type: SchemaType.STRING,
+              },
+              audience: {
+                type: SchemaType.STRING,
+              },
+            },
+          },
+        },
+        disinformation: {
           type: SchemaType.ARRAY,
           items: {
             type: SchemaType.OBJECT,
