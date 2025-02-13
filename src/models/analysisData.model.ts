@@ -31,6 +31,7 @@ export const analysisSchema = {
         'audience',
         'source_credibility_assessment',
         'narrative',
+        'hidden_agenda',
       ],
       properties: {
         disinformation: {
@@ -66,6 +67,9 @@ export const analysisSchema = {
           type: SchemaType.STRING,
         },
         narrative: {
+          type: SchemaType.STRING,
+        },
+        hidden_agenda: {
           type: SchemaType.STRING,
         },
       },
@@ -119,6 +123,7 @@ export const analysisSchema = {
               'intended_beneficiary',
               'audience',
               'narrative',
+              'hidden_agenda',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -138,6 +143,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               narrative: {
+                type: SchemaType.STRING,
+              },
+              hidden_agenda: {
                 type: SchemaType.STRING,
               },
             },
@@ -157,6 +165,7 @@ export const analysisSchema = {
               'intended_beneficiary',
               'audience',
               'narrative',
+              'hidden_agenda',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -178,6 +187,9 @@ export const analysisSchema = {
               narrative: {
                 type: SchemaType.STRING,
               },
+              hidden_agenda: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -195,6 +207,7 @@ export const analysisSchema = {
               'intended_beneficiary',
               'audience',
               'narrative',
+              'hidden_agenda',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -216,6 +229,9 @@ export const analysisSchema = {
               narrative: {
                 type: SchemaType.STRING,
               },
+              hidden_agenda: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -233,6 +249,7 @@ export const analysisSchema = {
               'intended_beneficiary',
               'audience',
               'narrative',
+              'hidden_agenda',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -252,6 +269,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               narrative: {
+                type: SchemaType.STRING,
+              },
+              hidden_agenda: {
                 type: SchemaType.STRING,
               },
             },

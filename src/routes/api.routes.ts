@@ -29,7 +29,8 @@ router.get('/analyze', async (req, res): Promise<void> => {
         prompt: `
           Language of article: ${prompt.substring(0, 100)}.
           Article${prompt}.
-          Source: ${url}
+          Source: ${url}.
+          the string values in each field must be in the language in which the text for analysis is written.
         `,
         generationConfig: {
           responseMimeType: 'application/json',
