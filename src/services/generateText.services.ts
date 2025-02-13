@@ -7,7 +7,7 @@ import { Result } from '../models';
 
 export const generateText = async <T>({
   prompt = '',
-  modelType = ModelType.Gemini_2_0_flash_exp,
+  modelType = ModelType.Gemini_2_0_flash_lite_preview_02_05,
   generationConfig,
 }: GenerateOptions): Promise<Result<T>> => {
   const model = genAI.getGenerativeModel({
