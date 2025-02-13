@@ -30,6 +30,7 @@ export const analysisSchema = {
         'intended_beneficiary',
         'audience',
         'source_credibility_assessment',
+        'narrative',
       ],
       properties: {
         disinformation: {
@@ -62,6 +63,9 @@ export const analysisSchema = {
           type: SchemaType.STRING,
         },
         source_credibility_assessment: {
+          type: SchemaType.STRING,
+        },
+        narrative: {
           type: SchemaType.STRING,
         },
       },
@@ -114,6 +118,7 @@ export const analysisSchema = {
               'purpose_disinformation',
               'intended_beneficiary',
               'audience',
+              'narrative',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -130,6 +135,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               audience: {
+                type: SchemaType.STRING,
+              },
+              narrative: {
                 type: SchemaType.STRING,
               },
             },
@@ -148,6 +156,7 @@ export const analysisSchema = {
               'purpose_disinformation',
               'intended_beneficiary',
               'audience',
+              'narrative',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -166,6 +175,9 @@ export const analysisSchema = {
               audience: {
                 type: SchemaType.STRING,
               },
+              narrative: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -182,6 +194,7 @@ export const analysisSchema = {
               'purpose_disinformation',
               'intended_beneficiary',
               'audience',
+              'narrative',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -200,6 +213,9 @@ export const analysisSchema = {
               audience: {
                 type: SchemaType.STRING,
               },
+              narrative: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -216,6 +232,7 @@ export const analysisSchema = {
               'purpose_disinformation',
               'intended_beneficiary',
               'audience',
+              'narrative',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -232,6 +249,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               audience: {
+                type: SchemaType.STRING,
+              },
+              narrative: {
                 type: SchemaType.STRING,
               },
             },
