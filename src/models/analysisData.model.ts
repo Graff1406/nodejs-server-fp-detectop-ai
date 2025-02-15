@@ -28,7 +28,7 @@ export const analysisSchema = {
         'purpose_disinformation',
         'summary',
         'intended_beneficiary',
-        'audience',
+        'influence_audience',
         'source_credibility_assessment',
         'narrative',
         'hidden_motive',
@@ -60,7 +60,7 @@ export const analysisSchema = {
         intended_beneficiary: {
           type: SchemaType.STRING,
         },
-        audience: {
+        influence_audience: {
           type: SchemaType.STRING,
         },
         source_credibility_assessment: {
@@ -121,7 +121,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
-              'audience',
+              'influence_audience',
               'narrative',
               'hidden_motive',
             ],
@@ -139,7 +139,7 @@ export const analysisSchema = {
               intended_beneficiary: {
                 type: SchemaType.STRING,
               },
-              audience: {
+              influence_audience: {
                 type: SchemaType.STRING,
               },
               narrative: {
@@ -163,7 +163,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
-              'audience',
+              'influence_audience',
               'narrative',
               'hidden_motive',
             ],
@@ -181,7 +181,7 @@ export const analysisSchema = {
               intended_beneficiary: {
                 type: SchemaType.STRING,
               },
-              audience: {
+              influence_audience: {
                 type: SchemaType.STRING,
               },
               narrative: {
@@ -205,7 +205,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
-              'audience',
+              'influence_audience',
               'narrative',
               'hidden_motive',
             ],
@@ -223,7 +223,7 @@ export const analysisSchema = {
               intended_beneficiary: {
                 type: SchemaType.STRING,
               },
-              audience: {
+              influence_audience: {
                 type: SchemaType.STRING,
               },
               narrative: {
@@ -247,7 +247,7 @@ export const analysisSchema = {
               'tone',
               'purpose_disinformation',
               'intended_beneficiary',
-              'audience',
+              'influence_audience',
               'narrative',
               'hidden_motive',
             ],
@@ -265,7 +265,7 @@ export const analysisSchema = {
               intended_beneficiary: {
                 type: SchemaType.STRING,
               },
-              audience: {
+              influence_audience: {
                 type: SchemaType.STRING,
               },
               narrative: {
