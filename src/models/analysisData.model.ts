@@ -32,6 +32,7 @@ export const analysisSchema = {
         'source_credibility_assessment',
         'narrative',
         'hidden_motive',
+        'emotional_impact_level',
       ],
       properties: {
         disinformation: {
@@ -70,6 +71,9 @@ export const analysisSchema = {
           type: SchemaType.STRING,
         },
         hidden_motive: {
+          type: SchemaType.STRING,
+        },
+        emotional_impact_level: {
           type: SchemaType.STRING,
         },
       },
@@ -124,6 +128,7 @@ export const analysisSchema = {
               'influence_audience',
               'narrative',
               'hidden_motive',
+              'emotional_impact_level',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -146,6 +151,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               hidden_motive: {
+                type: SchemaType.STRING,
+              },
+              emotional_impact_level: {
                 type: SchemaType.STRING,
               },
             },
@@ -166,6 +174,7 @@ export const analysisSchema = {
               'influence_audience',
               'narrative',
               'hidden_motive',
+              'emotional_impact_level',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -190,6 +199,9 @@ export const analysisSchema = {
               hidden_motive: {
                 type: SchemaType.STRING,
               },
+              emotional_impact_level: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -208,6 +220,7 @@ export const analysisSchema = {
               'influence_audience',
               'narrative',
               'hidden_motive',
+              'emotional_impact_level',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -232,6 +245,9 @@ export const analysisSchema = {
               hidden_motive: {
                 type: SchemaType.STRING,
               },
+              emotional_impact_level: {
+                type: SchemaType.STRING,
+              },
             },
           },
         },
@@ -250,6 +266,7 @@ export const analysisSchema = {
               'influence_audience',
               'narrative',
               'hidden_motive',
+              'emotional_impact_level',
             ],
             properties: {
               quote: { type: SchemaType.STRING },
@@ -272,6 +289,9 @@ export const analysisSchema = {
                 type: SchemaType.STRING,
               },
               hidden_motive: {
+                type: SchemaType.STRING,
+              },
+              emotional_impact_level: {
                 type: SchemaType.STRING,
               },
             },
