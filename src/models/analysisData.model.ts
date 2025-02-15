@@ -109,9 +109,9 @@ export const analysisSchema = {
             'Provide a concise summary of the article. Focus on the most essential points, capturing the core message or significance in a few sentences or even one sentence. Ensure that the summary reflects the main idea clearly and succinctly.',
         },
         source_credibility_assessment: {
-          type: SchemaType.STRING,
+          type: SchemaType.NUMBER,
           description:
-            '"Analyze the credibility of the given news source. Consider all mentions of bias, corruption, bribery, or publishing unverified information. Provide a concise assessment based on available data."',
+            'Analyze the credibility of the given news source. must be a number between 1 and 100. Consider all mentions of bias, corruption, bribery, or publishing unverified information.',
         },
         manipulation: {
           type: SchemaType.ARRAY,
