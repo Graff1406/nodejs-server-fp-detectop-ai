@@ -12,6 +12,6 @@ export const errorHandler = (
   res: Response,
   next: NextFunction
 ) => {
-  console.error(err.stack);
+  console.error('errorHandler', err.stack);
   res.status(500).send('Something went wrong!');
 };

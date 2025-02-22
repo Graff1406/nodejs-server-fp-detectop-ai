@@ -1,7 +1,7 @@
 import { SchemaType } from '@google/generative-ai';
 
 export const analysisSchema = {
-  required: ['translations', 'total_score', 'details', 'is_news_article'],
+  required: ['translations', 'details', 'is_news_article'],
   type: SchemaType.OBJECT,
   properties: {
     is_news_article: {
@@ -76,18 +76,6 @@ export const analysisSchema = {
         emotional_impact_level: {
           type: SchemaType.STRING,
         },
-      },
-    },
-    total_score: {
-      type: SchemaType.OBJECT,
-      required: ['propaganda', 'fake', 'manipulation'],
-      description:
-        'The total score of the article must be a number between 1 and 100',
-      properties: {
-        disinformation: { type: SchemaType.NUMBER },
-        propaganda: { type: SchemaType.NUMBER },
-        fake: { type: SchemaType.NUMBER },
-        manipulation: { type: SchemaType.NUMBER },
       },
     },
     details: {

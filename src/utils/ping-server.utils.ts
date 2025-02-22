@@ -1,5 +1,4 @@
 export const pingServer = async (pingUrl: string): Promise<void> => {
-  console.log('🚀 ~ pingServer ~ pingUrl:', pingUrl);
   try {
     const response = await fetch(pingUrl);
     if (!response.ok) {
